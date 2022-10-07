@@ -6,24 +6,31 @@ new Client
     Id = 1,
     Nome = "Augusto Moreira",
     Email = "augusto@email.com",
-    Telefone = "2196969696",
-    EnderecoCompleto = "Rua Ali Perto"
+    Telefone = "219696969",
+    EnderecoCompleto = "Rua Ali Longe"
 }.Save();
 
-/*new Client
+new Client
 {
     Id = 2,
-    Nome = "Enzo Moreira",
-    Email = "augusto@email.com",
+    Nome = "Enzo Nobre",
+    Email = "enzo@email.com",
     Telefone = "2196969696",
     EnderecoCompleto = "Rua Ali Perto"
-}.Save();*/
+}.Save(Tipo.CSV);
 
-/*new Client
+
+
+Console.WriteLine("============[ Lendo do Json ]======================");
+foreach (var cliente in Client.GetClients())
 {
-    Id = 3,
-    Nome = "Jeniffer Moreira",
-    Email = "augusto@email.com",
-    Telefone = "2196969696",
-    EnderecoCompleto = "Rua Ali Perto"
-}.Save();*/
+    Console.WriteLine($"Id: {cliente.Id}");
+    Console.WriteLine($"Id: {cliente.Nome}");
+}
+
+Console.WriteLine("============[ Lendo do CSV ]======================");
+foreach (var cliente in Client.GetClients(Tipo.CSV))
+{
+    Console.WriteLine($"Id: {cliente.Id}");
+    Console.WriteLine($"Id: {cliente.Nome}");
+}
